@@ -8,7 +8,7 @@ require_login();
 <body>
 <?php include ('views/nav.php'); ?>
 <?php print_r($_SESSION); ?>
-	<h1>Your Courses <a href="logout.php">log out</a></h1>
+	<h1>Your Courses</h1>
 	<?php
 		$pg = $GLOBALS['pg'];
 		$result = pg_query($pg, "SELECT courseid, coursename, section, semester_year, semester_term FROM db.course");
