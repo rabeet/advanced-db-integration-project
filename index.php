@@ -14,28 +14,7 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
 	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 </head>
 <body>
-	
-	<nav class="navbar navbar-default navbar-static-top navbar-inverse">
-  <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="courses.php">Courses</a></li>
-            <li class="divider"></li>
-          </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-right">
-        <a href="login.php"><span class="glyphicon glyphicon-book"></span> Account</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<?php include ('views/nav.html'); ?>
 
 	<h1>LMS Login</h1><br>
 	<?php if(isset($_SESSION["error"])) { ?>
