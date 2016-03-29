@@ -7,3 +7,4 @@ session_start();
 
 login(HTTP_SCRIPT_HOME."/courses.php");
 ?>
+<?php include ('views/header.html'); ?>

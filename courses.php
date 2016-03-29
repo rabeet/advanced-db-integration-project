@@ -4,11 +4,9 @@ require("superinclude.php");
 require_login();
 ?>
 
-<html>
-<head>
-	<title>Course Overview</title>
-</head>
+<?php include ('views/header.html'); ?>
 <body>
+<?php include ('views/nav.html'); ?>
 <?php print_r($_SESSION); ?>
 	<h1>Your Courses <a href="logout.php">log out</a></h1>
 	<?php
