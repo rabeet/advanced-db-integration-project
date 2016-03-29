@@ -7,6 +7,16 @@ function logout($url) {
 	die();
 }
 
+// true if a user is logged in
+function user_logged_in() {
+	return (isset($_SESSION["logged_in"]));
+}
+
+// returns current user object
+function current_user() {
+	
+}
+
 function login($url) {
 	if(!isset($_POST["username"]) || !isset($_POST["password"])) error("Bad credentials.");
 	$pg = $GLOBALS['pg'];

@@ -7,7 +7,7 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
 
 <?php include ('views/header.html'); ?>
 <body>
-<?php include ('views/nav.html'); ?>
+<?php include ('views/nav.php'); ?>
 
 	<h1>LMS Login</h1><br>
 	<?php if(isset($_SESSION["error"])) { ?>

@@ -7,8 +7,11 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="courses.php">Courses</a></li>
-                    <li class="divider"></li>
+                    <?php if(user_logged_in()) {?>
+                    <li><a href="courses.php">Your courses show here!</a></li>
+                    <?php } else { ?>
+                    <li><a href="login.php">Please login to view your courses</a></li>
+                    <?php } ?>
                 </ul>
             </li>
         </ul>
