@@ -1,9 +1,3 @@
-<?php
-require("superinclude.php");
-
-
-redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
-?>
 
 <html>
 <head>
