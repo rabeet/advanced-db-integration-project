@@ -15,7 +15,7 @@ function login($url) {
 	$password = pg_escape_literal($_POST["password"]);
 	
 	
-	$result = pg_query($pg, "SELECT username, role FROM db.users WHERE \"username\"=$username AND \"password\"=MD5($password)");
+	$result = pg_query($pg, "SELECT username, role FROM db.users WHERE \"username\"=$username AND \"password\"=$password");
 	if(!$result) die("Database error!");
 
 	$row = pg_fetch_row($result);
