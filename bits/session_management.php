@@ -14,7 +14,7 @@ function user_logged_in() {
 
 // returns current username
 function current_user() {
-	if(user_logged_in) {
+	if(user_logged_in()) {
 		return $_SESSION["username"];
 	} else {
 		die();
