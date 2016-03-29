@@ -14,7 +14,6 @@ function user_logged_in() {
 
 // returns current username
 function current_user() {
-	echo 'I have been called!';
 	if(user_logged_in()) {
 		return ($_SESSION["username"]);
 	} else {

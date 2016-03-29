@@ -8,7 +8,7 @@ require_login();
 <body>
 <?php include ('views/nav.php'); ?>
 <?php print_r($_SESSION); ?>
-	<h1>Welcome <?php current_user(); ?>!</h1>
+	<h1>Welcome <?php echo current_user(); ?>!</h1>
 	<?php
 		$pg = $GLOBALS['pg'];
 		$result = pg_query($pg, "SELECT courseid, coursename, section, semester_year, semester_term FROM db.course");
