@@ -9,7 +9,7 @@ use Basho\Riak\Command;
 
 // define the connection info to our Riak nodes
 $node = (new Node\Builder)
-    ->atHost('https://adv-db-riak.herokuapp.com')
+    ->atHost('localhost')
     ->onPort(443)
     ->build();
 
