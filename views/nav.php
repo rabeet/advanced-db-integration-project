@@ -18,7 +18,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="navbar-right">
                 <?php if(user_logged_in()) {?>
-                <a href="logout.php"><span class="glyphicon glyphicon-book"></span> Logout</a>
+                <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                 <?php } ?>
             </li>
         </ul>

@@ -12,9 +12,13 @@ function user_logged_in() {
 	return (isset($_SESSION["logged_in"]));
 }
 
-// returns current user object
+// returns current username
 function current_user() {
-	
+	if(user_logged_in) {
+		return $_SESSION["username"];
+	} else {
+		die();
+	}
 }
 
 function login($url) {
