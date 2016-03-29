@@ -17,7 +17,7 @@ function current_user() {
 	if(user_logged_in()) {
 		return $_SESSION["username"];
 	} else {
-		die();
+		return "Valued user";
 	}
 }
 
