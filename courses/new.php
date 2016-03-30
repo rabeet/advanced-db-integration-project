@@ -1,80 +1,51 @@
-<?php
-require("../superinclude.php");
+<?php require( "../superinclude.php"); require_login(); require_professor(); ?>
 
-require_login();
-require_professor();
-?>
+<?php include ( '../views/header.html'); ?>
 
-<?php include ('../views/header.html'); ?>
 <body>
-<?php include ('../views/nav.php'); ?>
-<div class="container">
-	<div class="row">
-		<h3>Welcome <?php echo current_user_role(); ?>!</h3>
-	</div>
-	<div class="row">
-		<?php
-			// $pg = $GLOBALS['pg'];
-			// $result = pg_query($pg, "SELECT courseid, coursename, section, semester_year, semester_term FROM db.course");
-			// while($row = pg_fetch_row($result)) {
-			// 	print_r($row);
-			// }
-			
-			if (current_user_isProfessor()) {
-				// professor
-				$all_courses = indexAllCourses();
-				?>
-				<div class="col-lg-12">
-					<div class="media">
-				  <div class="media-body">
-				    <table class="table table-hover table-condensed">
-				      <thead>
-				        <tr>
-				          <th>All Courses <strong>(<?php count($all_courses); ?>)</strong></th>
-				          <th colspan="3"></th>
-				        </tr>
-				      </thead>
-				    
-				      <tbody>
-				          <tr>
-				              <td>Course ID</td>
-				              <td>Course Name</td>
-				              <td><a href="#">View Course Info</a></td>
-				          </tr>
-				      </tbody>
-				    </table>
-				  </div>
-				</div>
-				</div>
-			<?php } else { 
-				// student
-				$user_courses = indexCourses(current_user());
-				?>
-				<div class="col-lg-12">
-					<div class="media">
-				  <div class="media-body">
-				    <table class="table table-hover table-condensed">
-				      <thead>
-				        <tr>
-				          <th>Your Course Registrations <strong>(<?php count($user_courses); ?>)</strong></th>
-				          <th colspan="3"></th>
-				        </tr>
-				      </thead>
-				    
-				      <tbody>
-				          <tr>
-				              <td>Course ID</td>
-				              <td>Course Name</td>
-				              <td><a href="#">View Course Assignments</a></td>
-				          </tr>
-				      </tbody>
-				    </table>
-				  </div>
-				</div>
-				</div>
-			<?php } ?>
-	</div>
-</div>
+    <?php include ( '../views/nav.php'); ?>
+    <div class="container">
+        <div class="row">
+            <h3>Creating new course</h3>
+        </div>
+        <div class="row">
+            <?php if (current_user_isProfessor()) { // professor ?>
+            <div class="col-lg-12">
+                <form class="form-horizontal" role="form" action="create.php" method="POST">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Course Name:</label>
+                        <div class="col-sm-10">
+                            <input type="name" class="form-control" id="coursename" placeholder="Enter name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="section">Course Section:</label>
+                        <div class="col-sm-10">
+                            <input type="name" class="form-control" id="section" placeholder="Enter section">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="semester_year">Semester Year:</label>
+                        <div class="col-sm-10">
+                            <input type="name" class="form-control" id="semester_year" placeholder="Enter Semester Year">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="semester_term">Semester Term:</label>
+                        <div class="col-sm-10">
+                            <input type="name" class="form-control" id="semester_term" placeholder="Enter Semester Term">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <?php } ?>
+        </div>
 
 </body>
+
 </html>
