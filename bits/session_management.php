@@ -35,7 +35,14 @@ function current_user_isProfessor() {
 	if (user_logged_in) {
 		return (current_user_role() == "Professor");
 	} else {
-		die();
+		// die();
+	}
+}
+
+// require professor access
+function require_professor() {
+	if (!current_user_isProfessor()) {
+		redirect(HTTP_SCRIPT_HOME);
 	}
 }
 

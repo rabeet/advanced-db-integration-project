@@ -15,6 +15,8 @@
                             <?php while ($row = pg_fetch_row($courses)) { ?>
                                 <li><a href="#"><?php echo $row[1]; ?></a></li>
                             <?php } ?>
+                            <li class="divider"></li>
+                            <li><a href="new.php">Create new course</a></li>
                         </ul>
                     <?php } else {
                         // student
