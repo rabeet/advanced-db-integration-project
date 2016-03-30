@@ -17,16 +17,11 @@ function createCourse() {
         	$semester_term = $_POST["semester_term"];
         	
         	$result = pg_query($pg, "INSERT INTO db.course (coursename, section, semester_year, semester_term) VALUES ('$coursename', '$section', $semester_year, '$semester_term');");
-        	if(!$result) die("Database error!");
-        	
-            if (pg_num_rows($result)) 
-            {
-                echo "Course successfully created!<br/>";
-                }
-            else
-            {
-                echo "Course not added :(";
-            }
+        	if(!$result) {
+        	    die("Database error!");
+        	} else {
+        	    
+        	}
     	}
     }
 }

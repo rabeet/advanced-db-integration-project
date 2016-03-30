@@ -22,9 +22,33 @@ require_login();
 			
 			if (current_user_isProfessor()) {
 				// professor
+				$user_assignments = indexAllAssignments();
 				?>
 				<div class="col-lg-12">
-					
+					<div class="media">
+					  <div class="media-body">
+					    <table class="table table-hover table-condensed">
+					      <thead>
+					        <tr>
+					          <th>All Assignments <strong>(<?php pg_num_rows($user_assignments); ?>)</strong></th>
+					          <th colspan="3"></th>
+					        </tr>
+					      </thead>
+					    
+					      <tbody>
+							<?php while ($row = pg_fetch_row($user_assignments)) { ?>
+								<tr>
+								  <td><?php echo $row[0]; ?></td>
+								  <td><?php echo $row[1]; ?></td>
+								  <td><?php echo $row[2]; ?></td>
+								  <td><?php echo $row[3]; ?></td>
+								  <td><a href="#">View assignment</a></td>
+								</tr>
+							<?php } ?>
+					      </tbody>
+					    </table>
+					  </div>
+					</div>
 				</div>
 			<?php } else { 
 				// student
@@ -36,18 +60,21 @@ require_login();
 				    <table class="table table-hover table-condensed">
 				      <thead>
 				        <tr>
-				          <th>All Assignments <strong>(<?php count($user_assignments); ?>)</strong></th>
+				          <th>All Assignments <strong>(<?php pg_num_rows($user_assignments); ?>)</strong></th>
 				          <th colspan="3"></th>
 				        </tr>
 				      </thead>
 				    
 				      <tbody>
-				          <tr>
-				              <td>Assignment ID</td>
-				              <td>Assignment name</td>
-				              <td>Assignment text</td>
-				              <td><a href="#">View assignment</a></td>
-				          </tr>
+						<?php while ($row = pg_fetch_row($user_assignments)) { ?>
+							<tr>
+							  <td><?php echo $row[0]; ?></td>
+							  <td><?php echo $row[1]; ?></td>
+							  <td><?php echo $row[2]; ?></td>
+							  <td><?php echo $row[3]; ?></td>
+							  <td><a href="#">View assignment</a></td>
+							</tr>
+						<?php } ?>
 				      </tbody>
 				    </table>
 				  </div>
