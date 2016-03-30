@@ -28,7 +28,7 @@
                     <?php } ?>
                 <?php } ?>
             </li>
-            <?php if(current_user_isProfessor()) { ?>
+            <?php if(user_logged_in() && current_user_isProfessor()) { ?>
                 <li class="dropdown">
                     <a href="/assignments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Assignments <span class="caret"></span></a>
                 </li>
