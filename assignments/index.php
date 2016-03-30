@@ -30,8 +30,15 @@ require_login();
 					    <table class="table table-hover table-condensed">
 					      <thead>
 					        <tr>
-					          <th>All Assignments <strong>(<?php pg_num_rows($user_assignments); ?>)</strong></th>
+					          <th>All Assignments <strong>(<?php echo pg_num_rows($user_assignments); ?>)</strong></th>
 					          <th colspan="3"></th>
+					        </tr>
+					        <tr>
+					        	<th>Assignment ID</th>
+				        		<th>Assignment Name</th>
+				        		<th>Assignment Text</th>
+				        		<th>Assignment Course ID</th>
+				        		<th>Assignment Course Name</th>
 					        </tr>
 					      </thead>
 					    
@@ -42,6 +49,7 @@ require_login();
 								  <td><?php echo $row[1]; ?></td>
 								  <td><?php echo $row[2]; ?></td>
 								  <td><?php echo $row[3]; ?></td>
+								  <td><?php echo $row[4]; ?></td>
 								  <td><a href="#">View assignment</a></td>
 								</tr>
 							<?php } ?>
@@ -60,18 +68,22 @@ require_login();
 				    <table class="table table-hover table-condensed">
 				      <thead>
 				        <tr>
-				          <th>All Assignments <strong>(<?php pg_num_rows($user_assignments); ?>)</strong></th>
+				          <th>All Assignments <strong>(<?php echo pg_num_rows($user_assignments); ?>)</strong></th>
 				          <th colspan="3"></th>
+				        </tr>
+				        <tr>
+				        	<th>Assignment Name</th>
+				        	<th>Assignment Text</th>
+				        	<th>Assignment Course</th>
 				        </tr>
 				      </thead>
 				    
 				      <tbody>
 						<?php while ($row = pg_fetch_row($user_assignments)) { ?>
 							<tr>
-							  <td><?php echo $row[0]; ?></td>
-							  <td><?php echo $row[1]; ?></td>
 							  <td><?php echo $row[2]; ?></td>
 							  <td><?php echo $row[3]; ?></td>
+							  <td><?php echo $row[4]; ?></td>
 							  <td><a href="#">View assignment</a></td>
 							</tr>
 						<?php } ?>
