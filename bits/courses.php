@@ -15,7 +15,7 @@ function showCourse() {
 // Index/show all courses for user
 function indexCourses($username) {
     $pg = $GLOBALS['pg'];
-    $pg_query = "SELECT courseid FROM db.course_memberships where username = $username;";
+    $pg_query = "SELECT db.course_memberships.courseid, coursename FROM db.course_memberships JOIN db.course ON db.course.courseid = db.course_memberships.courseid where db.course_memberships.username = $username;";
     $result = pg_query($pg, $pg_query);
     if(!$result) die("DB error!");
     return $result;

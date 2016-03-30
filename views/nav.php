@@ -21,15 +21,15 @@
                         $courses = indexCourses(current_user());
                     ?>
                         <ul class="dropdown-menu" role="menu">
-                            <?php foreach ($courses as &$course) { ?>
-                                <li><a href="#">crs</a></li>
+                            <?php while ($row = pg_fetch_row($courses)) { ?>
+                                <li><a href="#"><?php print_r($row); ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php } ?>
                 <?php } ?>
             </li>
             <?php if(user_logged_in() && current_user_isProfessor()) { ?>
-                <li class="dropdown">
+                <li>
                     <a href="/assignments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Assignments <span class="caret"></span></a>
                 </li>
             <?php } ?>
