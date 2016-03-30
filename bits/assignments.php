@@ -1,4 +1,6 @@
 <?php
+require("superinclude.php");
+
 // Assignment CRUD operations
 
 // // Create
