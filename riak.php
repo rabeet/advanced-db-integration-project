@@ -1,11 +1,11 @@
 <?php
 
-// require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-// // lib classes are included via the Composer autoloader files
-// use Basho\Riak;
-// use Basho\Riak\Node;
-// use Basho\Riak\Command;
+// lib classes are included via the Composer autoloader files
+use Basho\Riak;
+use Basho\Riak\Node;
+use Basho\Riak\Command;
 
 // define the connection info to our Riak nodes
 $port = getenv('PORT');
