@@ -9,7 +9,6 @@ require_login();
 <?php include ('views/nav.php'); ?>
 <div class="container">
 	<div class="row">
-		<?php //print_r($_SESSION); ?>
 		<h3>Welcome <?php echo current_user_role(); ?>!</h3>
 	</div>
 	<div class="row">

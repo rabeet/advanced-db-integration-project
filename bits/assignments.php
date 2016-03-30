@@ -2,12 +2,14 @@
 
 // Assignment CRUD operations
 
-// // Create
-function createAssignment() {
-    
+// Create
+function createAssignment($assignmentname, $assignmenttext) {
+    if (current_user_isProfessor()) {
+        $pg = $GLOBALS['pg'];
+    }
 }
-// // Read/Show
-function showAssignment() {
+// Read/Show
+function showAssignment($assignmentid) {
     
 }
 // Index/show all assignments for user
@@ -20,10 +22,14 @@ function indexAssignments($username) {
 }
 // Update
 function updateAssignment() {
-    
+    if (current_user_isProfessor()) {
+        
+    }
 }
 // Delete
 function deleteAssignment() {
-    
+    if (current_user_isProfessor()) {
+        
+    }
 }
 ?>

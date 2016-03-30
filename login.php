@@ -5,6 +5,6 @@ require("superinclude.php");
 session_start();
 
 
-login(HTTP_SCRIPT_HOME."/courses.php");
+login(HTTP_SCRIPT_HOME."/assignments");
 ?>
 <?php include ('views/header.html'); ?>
