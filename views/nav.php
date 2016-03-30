@@ -12,8 +12,8 @@
                         $courses = indexAllCourses();
                     ?>
                         <ul class="dropdown-menu" role="menu">
-                            <?php foreach ($courses as &$course) { ?>
-                                <li><a href="#">crs</a></li>
+                            <?php while ($row = pg_fetch_row($courses)) { ?>
+                                <li><a href="#"><?php print_r($row); ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php } else {
