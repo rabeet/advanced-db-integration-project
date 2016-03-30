@@ -32,7 +32,7 @@
                 <li class="dropdown">
                     <a href="/assignments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Assignments <span class="caret"></span></a>
                 </li>
-            <?php ?>
+            <?php } ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="navbar-right">
