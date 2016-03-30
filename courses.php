@@ -10,7 +10,7 @@ require_login();
 <div class="container">
 	<div class="row">
 		<?php print_r($_SESSION); ?>
-		<h3>Welcome <?php echo current_user_role() + " " + current_user(); ?>!</h3>
+		<h3>Welcome <?php echo current_user_role(); ?>!</h3>
 	</div>
 	<div class="row">
 		<?php
