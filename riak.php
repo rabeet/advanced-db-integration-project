@@ -11,7 +11,7 @@ use Basho\Riak\Command;
 $port = getenv('PORT');
 echo $port;
 $nodes = (new Node\Builder)
-    ->atHost('https://adv-db-riak.herokuapp.com')
+    ->atHost('adv-db-riak.herokuapp.com')
     ->onPort(443)
     ->build();
 
