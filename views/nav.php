@@ -13,7 +13,7 @@
                     ?>
                         <ul class="dropdown-menu" role="menu">
                             <?php while ($row = pg_fetch_row($courses)) { ?>
-                                <li><a href="#"><?php print_r($row[1]); ?></a></li>
+                                <li><a href="#"><?php echo $row[1]; ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php } else {
@@ -22,7 +22,7 @@
                     ?>
                         <ul class="dropdown-menu" role="menu">
                             <?php while ($row = pg_fetch_row($courses)) { ?>
-                                <li><a href="#"><?php print_r($row[1]); ?></a></li>
+                                <li><a href="#"><?php echo $row[1]; ?></a></li>
                             <?php } ?>
                         </ul>
                     <?php } ?>
