@@ -6,25 +6,28 @@
 function createCourse() {
     if (current_user_isProfessor()) {
         
-    	if(!isset($_POST["coursename"]) || !isset($_POST["semester_year"]) || !isset($_POST["semester_term"])) error("Please check the submitted info.");
-    	$pg = $GLOBALS['pg'];
+    	if(!isset($_POST["coursename"]) || !isset($_POST["semester_year"]) || !isset($_POST["semester_term"])) {
+    	    echo 'Please check the submitted info';
+    	} else {
+    	    $pg = $GLOBALS['pg'];
     	
-    	$coursename = $_POST["coursename"];
-    	$section = $_POST["section"];
-    	$semester_year = $_POST["semester_year"];
-    	$semester_term = $_POST["semester_term"];
-    	
-    	$result = pg_query($pg, "INSERT INTO db.course (coursename, section, semester_year, semester_term) VALUES ('$coursename', '$section', $semester_year, '$semester_term');");
-    	if(!$result) die("Database error!");
-    	
-        if (pg_num_rows($result)) 
-        {
-            echo "Course successfully created!<br/>";
+        	$coursename = $_POST["coursename"];
+        	$section = $_POST["section"];
+        	$semester_year = $_POST["semester_year"];
+        	$semester_term = $_POST["semester_term"];
+        	
+        	$result = pg_query($pg, "INSERT INTO db.course (coursename, section, semester_year, semester_term) VALUES ('$coursename', '$section', $semester_year, '$semester_term');");
+        	if(!$result) die("Database error!");
+        	
+            if (pg_num_rows($result)) 
+            {
+                echo "Course successfully created!<br/>";
+                }
+            else
+            {
+                echo "Course not added :(";
             }
-        else
-        {
-            echo "Course not added :(";
-        }
+    	}
     }
 }
 // Read/Show
