@@ -15,25 +15,25 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Course Name:</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" id="coursename" placeholder="Enter name">
+                            <input type="name" class="form-control" name="coursename" placeholder="Enter name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="section">Course Section:</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" id="section" placeholder="Enter section">
+                            <input type="name" class="form-control" name="section" placeholder="Enter section">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="semester_year">Semester Year:</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" id="semester_year" placeholder="Enter Semester Year">
+                            <input type="name" class="form-control" name="semester_year" placeholder="Enter Semester Year">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="semester_term">Semester Term:</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" id="semester_term" placeholder="Enter Semester Term">
+                            <input type="name" class="form-control" name="semester_term" placeholder="Enter Semester Term">
                         </div>
                     </div>
                     <div class="form-group">
