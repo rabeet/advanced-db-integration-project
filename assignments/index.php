@@ -1,5 +1,5 @@
 <?php
-require("superinclude.php");
+require("../superinclude.php");
 
 require_login();
 ?>
