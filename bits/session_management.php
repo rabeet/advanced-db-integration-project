@@ -21,6 +21,24 @@ function current_user() {
 	}
 }
 
+// returns current user's role
+function current_user_role() {
+	if (user_logged_in()) {
+		return $_SESSION["role"];
+	} else {
+		die();
+	}
+}
+
+// returns true if user is professor
+function current_user_isProfessor() {
+	if (user_logged_in) {
+		return (current_user_role() == "Professor");
+	} else {
+		die();
+	}
+}
+
 function login($url) {
 	if(!isset($_POST["username"]) || !isset($_POST["password"])) error("Bad credentials.");
 	$pg = $GLOBALS['pg'];
