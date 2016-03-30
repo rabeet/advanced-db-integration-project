@@ -3,11 +3,27 @@
 // Assignment CRUD operations
 
 // Create
-function createAssignment($assignmentname, $assignmenttext) {
+function createAssignment() {{
     if (current_user_isProfessor()) {
-        $pg = $GLOBALS['pg'];
+        
+    	if(!isset($_POST["courseid"]) || !isset($_POST["assignmentname"]) || !isset($_POST["assignmenttext"])) {
+    	    echo 'Please check the submitted info';
+    	} else {
+    	    $pg = $GLOBALS['pg'];
+    	
+        	$assignmentname = $_POST["assignmentname"];
+        	$assignmenttext = $_POST["assignmenttext"];
+        	$courseid = $_POST["courseid"];
+
+        	$result = pg_query($pg, "INSERT INTO db.assignment (courseid, assignmentname, assignmenttext) VALUES ('$courseid', '$assignmentname', '$assignmenttext');");
+        	if(!$result) {
+        	    die("Database error!");
+        	} else {
+        	    redirect(HTTP_SCRIPT_HOME);
+        	}
+    	}
     }
-}
+}}
 // Read/Show
 function showAssignment($assignmentid) {
     

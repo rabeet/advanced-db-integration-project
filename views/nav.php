@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="nav navbar-nav">
             <li>
-                <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+                <a href="/"><span class="glyphicon glyphicon-home"></span> Project LMS</a>
             </li>
             <li class="dropdown">
                 <a href="/courses" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
