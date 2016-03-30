@@ -5,14 +5,28 @@
                 <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <?php if(user_logged_in()) {?>
-                    <li><a href="courses.php">Your courses show here!</a></li>
-                    <?php } else { ?>
-                    <li><a href="login.php">Please login to view your courses</a></li>
+                <a href="/courses" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
+                <?php if(user_logged_in()) { ?>
+                    <?php if(user_isProfessor()) {
+                        // professor
+                        $courses = indexAllCourses();
+                    ?>
+                        <ul class="dropdown-menu" role="menu">
+                            <?php foreach ($courses as &$course) { ?>
+                                <li><a href="#">crs</a></li>
+                            <?php } ?>
+                        </ul>
+                    <?php } else {
+                        // student
+                        $courses = indexCourses(current_user());
+                    ?>
+                        <ul class="dropdown-menu" role="menu">
+                            <?php foreach ($courses as &$course) { ?>
+                                <li><a href="#">crs</a></li>
+                            <?php } ?>
+                        </ul>
                     <?php } ?>
-                </ul>
+                <?php } ?>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
