@@ -20,7 +20,7 @@ function createCourse() {
         	if(!$result) {
         	    die("Database error!");
         	} else {
-        	    
+        	    redirect(HTTP_SCRIPT_HOME);
         	}
     	}
     }

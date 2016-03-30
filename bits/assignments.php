@@ -32,6 +32,17 @@ function indexAllAssignments() {
     }
 }
 
+// Index/show top 5 assignments (professor only)
+function indexTop5Assignments() {
+    if (current_user_isProfessor()) {
+        $pg = $GLOBALS['pg'];
+        $pg_query = "SELECT assignmentid, assignmentname from db.assignment LIMIT(5);";
+        $result = pg_query($pg, $pg_query);
+        if(!$result) die("DB error!");
+        return $result;  
+    }
+}
+
 // Update
 function updateAssignment() {
     if (current_user_isProfessor()) {

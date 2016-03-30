@@ -30,9 +30,18 @@
                     <?php } ?>
                 <?php } ?>
             </li>
-            <?php if(user_logged_in() && current_user_isProfessor()) { ?>
+            <?php if(user_logged_in() && current_user_isProfessor()) { 
+                $assignments = indexTop5Assignments();
+            ?>
                 <li>
-                    <a href="/assignments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Assignments <span class="caret"></span></a>
+                    <a href="/assignments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Assignments (first 5) <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <?php while ($row = pg_fetch_row($assignments)) { ?>
+                            <li><a href="#"><?php echo $row[1]; ?></a></li>
+                        <?php } ?>
+                        <li class="divider"></li>
+                        <li><a href="/assignments/new.php">Create New Assignment</a></li>
+                    </ul>
                 </li>
             <?php } ?>
         </ul>

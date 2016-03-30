@@ -31,7 +31,7 @@ require_login();
 					      <thead>
 					        <tr>
 					          <th>All Assignments <strong>(<?php echo pg_num_rows($user_assignments); ?>)</strong></th>
-					          <th colspan="3"></th>
+					          <th colspan="4"></th>
 					        </tr>
 					        <tr>
 					        	<th>Assignment ID</th>
@@ -39,6 +39,7 @@ require_login();
 				        		<th>Assignment Text</th>
 				        		<th>Assignment Course ID</th>
 				        		<th>Assignment Course Name</th>
+				        		<th></th>
 					        </tr>
 					      </thead>
 					    
