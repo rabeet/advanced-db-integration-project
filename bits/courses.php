@@ -1,4 +1,4 @@
-<? php
+<?php
 
 // Courses CRUD operations
 
