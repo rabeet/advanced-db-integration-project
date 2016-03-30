@@ -1,7 +1,9 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
     <div class="container">
         <ul class="nav navbar-nav">
-            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+            <li>
+                <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+            </li>
             <li class="dropdown">
                 <a href="/courses" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
                 <?php if(user_logged_in()) { ?>
