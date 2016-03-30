@@ -7,7 +7,7 @@
             <li class="dropdown">
                 <a href="/courses" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Courses <span class="caret"></span></a>
                 <?php if(user_logged_in()) { ?>
-                    <?php if(user_isProfessor()) {
+                    <?php if(current_user_isProfessor()) {
                         // professor
                         $courses = indexAllCourses();
                     ?>
