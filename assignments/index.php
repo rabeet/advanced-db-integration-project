@@ -4,9 +4,9 @@ require("../superinclude.php");
 require_login();
 ?>
 
-<?php include ('/views/header.html'); ?>
+<?php include ('../views/header.html'); ?>
 <body>
-<?php include ('/views/nav.php'); ?>
+<?php include ('../views/nav.php'); ?>
 <div class="container">
 	<div class="row">
 		<?php //print_r($_SESSION); ?>
