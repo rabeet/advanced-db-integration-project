@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . 'vendor/autoload.php';
 
 // lib classes are included via the Composer autoloader files
 use Basho\Riak;
