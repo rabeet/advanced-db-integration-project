@@ -21,13 +21,7 @@ require_login();
 			
 			if (current_user_isProfessor()) {
 				// professor
-				?>
-				<div class="col-lg-12">
-					
-				</div>
-			<?php } else { 
-				// student
-				$user_assignments = indexAssignments(current_user());
+				$all_courses = indexAllCourses();
 				?>
 				<div class="col-lg-12">
 					<div class="media">
@@ -35,17 +29,42 @@ require_login();
 				    <table class="table table-hover table-condensed">
 				      <thead>
 				        <tr>
-				          <th>All Assignments <strong>(<?php count($user_assignments); ?>)</strong></th>
+				          <th>All Courses <strong>(<?php count($all_courses); ?>)</strong></th>
 				          <th colspan="3"></th>
 				        </tr>
 				      </thead>
 				    
 				      <tbody>
 				          <tr>
-				              <td>Assignment ID</td>
-				              <td>Assignment name</td>
-				              <td>Assignment text</td>
-				              <td><a href="#">View assignment</a></td>
+				              <td>Course ID</td>
+				              <td>Course Name</td>
+				              <td><a href="#">View Course Info</a></td>
+				          </tr>
+				      </tbody>
+				    </table>
+				  </div>
+				</div>
+				</div>
+			<?php } else { 
+				// student
+				$user_courses = indexCourses(current_user());
+				?>
+				<div class="col-lg-12">
+					<div class="media">
+				  <div class="media-body">
+				    <table class="table table-hover table-condensed">
+				      <thead>
+				        <tr>
+				          <th>Your Course Registrations <strong>(<?php count($user_courses); ?>)</strong></th>
+				          <th colspan="3"></th>
+				        </tr>
+				      </thead>
+				    
+				      <tbody>
+				          <tr>
+				              <td>Course ID</td>
+				              <td>Course Name</td>
+				              <td><a href="#">View Course Assignments</a></td>
 				          </tr>
 				      </tbody>
 				    </table>
