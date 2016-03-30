@@ -1,14 +1,14 @@
 <? php
 // Assignment CRUD operations
 
-// Create
-function createAssignment() {
+// // Create
+// function createAssignment() {
     
-}
-// Read/Show
-function showAssignment() {
+// }
+// // Read/Show
+// function showAssignment() {
     
-}
+// }
 // Index/show all assignments for user
 function indexAssignments($username) {
     $pg_query = "SELECT assignmentid, assignmentname, assignmenttext FROM db.assignment where username = '" + $username + "';";
@@ -16,12 +16,12 @@ function indexAssignments($username) {
     if(!$result) die("DB error!");
     return $result;
 }
-// Update
-function updateAssignment() {
+// // Update
+// function updateAssignment() {
     
-}
-// Delete
-function deleteAssignment() {
+// }
+// // Delete
+// function deleteAssignment() {
     
-}
+// }
 ?>
