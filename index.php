@@ -12,12 +12,12 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
 <div class="jumbotron text-center">
   <div class="container">
     <a href="/" class="lang-logo">
-      <img src="/images/lang-logo.png">
+      <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/9658-200.png">
     </a>
-    <h1>Getting Started with PHP on Heroku</h1>
-    <p>This is a sample PHP application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-php"><span class="glyphicon glyphicon-flash"></span> Getting Started with PHP</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/php-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
+    <h1>Learning Management System</h1>
+    <p>Simple PHP application to serve as a Learning Management System integrating a PostgreSQL DB and Riak DS.</p>
+    <p>Team LMS - Rabeet Fatmi, Rakesh Meka, Daniel Teichman</p>
+    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/rabeet/advanced-db-integration-project"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
   </div>
 </div>
 
