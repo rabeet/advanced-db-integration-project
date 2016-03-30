@@ -22,12 +22,9 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
 </div>
 
 <div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-php" class="alert-link">Getting Started with PHP on Heroku</a> tutorial.
-  </div>
   <hr>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="text-align:center">
       <h3><span class="glyphicon glyphicon-info-sign"></span> Login</h3>
 		<?php if(isset($_SESSION["error"])) { ?>
 			<h3><?php echo $_SESSION["error_message"]; ?></h3><br>
@@ -42,7 +39,7 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/courses.php");
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" role="alert">
-    Last edited by Rabeet Fatmi for Project MS4.
+    Last edited by Rabeet Fatmi on 3/29/2016 for MS4.
   </div>
 </div>
 </body>
