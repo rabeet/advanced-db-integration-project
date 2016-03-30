@@ -28,6 +28,7 @@ require_login();
 				</div>
 			<?php } else { 
 				// student
+				$user_assignments = indexAssignments(current_user());
 				?>
 				<div class="col-lg-12">
 					<div class="media">
@@ -35,16 +36,12 @@ require_login();
 				    <table class="table table-hover table-condensed">
 				      <thead>
 				        <tr>
-				          <th>New Assignments [assignment count here]</th>
+				          <th>All Assignments <strong>(<?php count($user_assignments); ?>)</strong></th>
 				          <th colspan="3"></th>
 				        </tr>
 				      </thead>
 				    
 				      <tbody>
-				        <?php 
-				        	$user_assignments = indexAssignments(current_user());
-				        	echo $user_assignments;
-				        ?>
 				          <tr>
 				              <td>Assignment ID</td>
 				              <td>Assignment name</td>
