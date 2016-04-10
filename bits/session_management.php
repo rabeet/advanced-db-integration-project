@@ -35,7 +35,7 @@ function current_user_isProfessor() {
 	if (user_logged_in) {
 		return (current_user_role() == "Professor");
 	} else {
-		// die();
+		return false; //they could be a guest in this case
 	}
 }
 
@@ -54,7 +54,9 @@ function login($url) {
 	$password = pg_escape_literal($_POST["password"]);
 	
 	
-	$result = pg_query($pg, "SELECT username, role FROM db.users WHERE \"username\"=$username AND \"password\"=$password");
+	//$result = pg_query($pg, "SELECT username, role FROM db.users WHERE \"username\"=$username AND \"password\"=$password");
+	//"role" is no longer in users table since Rabeet added course memberships
+	$result = pg_query($pg, "SELECT username FROM db.users WHERE \"username\"=$username AND \"password\"=$password");
 	if(!$result) die("Database error!");
 
 	$row = pg_fetch_row($result);
@@ -62,13 +64,14 @@ function login($url) {
 	if($row[0] == $_POST["username"]) {
 		$_SESSION["logged_in"] = true;
 		$_SESSION["username"] = $username;
-		$_SESSION["role"] = $row[1];
+		//$_SESSION["role"] = $row[1];
 		redirect($url);
 	}
 	die();
 }
 
 function redirect($url) {
+	//this only works if it doesn't corrupt the page's HTML
  	echo "<meta http-equiv='refresh' content='0; url=".$url."' />";
     die();
 }

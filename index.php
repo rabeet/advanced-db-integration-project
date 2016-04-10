@@ -41,6 +41,8 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/assignments");
    <div class="alert alert-info text-center" role="alert">
     Last edited by Rabeet Fatmi on 3/29/2016 for MS4.
   </div>
+  <?php output_load_time(); ?>
+  
 </div>
 </body>
 </html>
