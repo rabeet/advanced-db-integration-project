@@ -1,3 +1,0 @@
-<?php
-$pg = pg_connect($POSTGRES["string"]);
-?>
