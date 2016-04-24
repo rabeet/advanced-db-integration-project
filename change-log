@@ -1,0 +1,6 @@
+Since MS3:
+
+We decided to merge the different lines of code. (done, Daniel's task)
+We will use the new PHP Riak client to implement the missing pieces. (open, Rabeet's task)
+
+We will configure clustering. (open, group effort)

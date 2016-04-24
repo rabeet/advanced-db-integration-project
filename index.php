@@ -39,7 +39,7 @@ redirect_if_logged_in(HTTP_SCRIPT_HOME."/assignments");
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" role="alert">
-    Last edited by Rabeet Fatmi on 3/29/2016 for MS4.
+    Last edited by Rabeet Fatmi on 4/20/2016 for MS5.
   </div>
 </div>
 </body>

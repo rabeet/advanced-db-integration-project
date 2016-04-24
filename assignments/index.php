@@ -51,7 +51,7 @@ require_login();
 								  <td><?php echo $row[2]; ?></td>
 								  <td><?php echo $row[3]; ?></td>
 								  <td><?php echo $row[4]; ?></td>
-								  <td><a href="#">View assignment</a></td>
+								  <td><a href="<?php echo "show.php?assignmentid=" . $row[0] ?>">View assignment</a></td>
 								</tr>
 							<?php } ?>
 					      </tbody>
@@ -76,16 +76,22 @@ require_login();
 				        	<th>Assignment Name</th>
 				        	<th>Assignment Text</th>
 				        	<th>Assignment Course</th>
+				        	<th>Submitted On</th>
+				        	<th></th>
 				        </tr>
 				      </thead>
 				    
 				      <tbody>
-						<?php while ($row = pg_fetch_row($user_assignments)) { ?>
+						<?php while ($row = pg_fetch_row($user_assignments)) { 
+							$submission = showSubmission(current_user(), $row[1]);
+							$row1 = pg_fetch_row($submission);
+							?>
 							<tr>
 							  <td><?php echo $row[2]; ?></td>
 							  <td><?php echo $row[3]; ?></td>
 							  <td><?php echo $row[4]; ?></td>
-							  <td><a href="#">View assignment</a></td>
+							  <td><?php echo $row1[1]; ?></td>
+							  <td><a href="<?php echo "show.php?assignmentid=" . $row[1] ?>">View assignment</a></td>
 							</tr>
 						<?php } ?>
 				      </tbody>

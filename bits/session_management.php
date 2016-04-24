@@ -15,7 +15,7 @@ function user_logged_in() {
 // returns current username
 function current_user() {
 	if(user_logged_in()) {
-		return ($_SESSION["username"]);
+		return (str_replace('\'', '', $_SESSION["username"]));
 	} else {
 		return ('Valued user');
 	}
@@ -25,8 +25,6 @@ function current_user() {
 function current_user_role() {
 	if (user_logged_in()) {
 		return $_SESSION["role"];
-	} else {
-		die();
 	}
 }
 

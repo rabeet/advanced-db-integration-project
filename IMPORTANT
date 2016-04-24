@@ -1,0 +1,14 @@
+STOP USING FULL/ABSOLUTE PATHS IN YOUR LINKS
+
+BAD  : <a href="/folder/page"
+This accesses page in folder that is a subfolder of /var/www/html/
+
+GOOD : <a href="folder/page"
+This accesses page in folder that is a subfolder of the current dir
+
+IF YOU NEED TO START THE PATH AT THE ROOT,
+
+THEN PLEASE USE <a href="<?php echo HTTP_SCRIPT_HOME; ?>/folder/page"
+(to access page in folder that is a subfolder of the project dir)
+
+It might be important to deploy the LMS to a folder.
