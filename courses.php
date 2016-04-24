@@ -1,61 +1,65 @@
 <?php
-require("superinclude.php");
 
-require_login();
+// Courses CRUD operations
+
+// Create
+function createCourse() {
+    if (current_user_isProfessor()) {
+        
+    	if(!isset($_POST["coursename"]) || !isset($_POST["semester_year"]) || !isset($_POST["semester_term"])) {
+    	    echo 'Please check the submitted info';
+    	} else {
+    	    $pg = $GLOBALS['pg'];
+    	
+        	$coursename = $_POST["coursename"];
+        	$section = $_POST["section"];
+        	$semester_year = $_POST["semester_year"];
+        	$semester_term = $_POST["semester_term"];
+            $user = current_user();
+        	
+        	$result = pg_query($pg, "INSERT INTO db.course (coursename, section, semester_year, semester_term, username) VALUES ('$coursename', '$section', $semester_year, '$semester_term', $user);");
+        	if(!$result) {
+        	    die("Database error!");
+        	} else {
+        	    redirect(HTTP_SCRIPT_HOME);
+        	}
+    	}
+    }
+}
+// Read/Show
+function showCourse() {
+    
+}
+// Index/show all courses for user
+function indexCourses($username) {
+    $pg = $GLOBALS['pg'];
+    $pg_query = "SELECT db.course_memberships.courseid, coursename FROM db.course_memberships JOIN db.course ON db.course.courseid = db.course_memberships.courseid where db.course_memberships.username = $username;";
+    $result = pg_query($pg, $pg_query);
+    if(!$result) die("DB error!");
+    return $result;
+}
+
+// Index/show all courses (professor only)
+function indexAllCourses() {
+    if (current_user_isProfessor()) {
+        $pg = $GLOBALS['pg'];
+        $pg_query = "SELECT courseid, coursename, section FROM db.course;";
+        $result = pg_query($pg, $pg_query);
+        if(!$result) die("DB error!");
+        return $result;  
+    }
+}
+
+// Update
+function updateCourse() {
+    if (current_user_isProfessor()) {
+        $pg = $GLOBALS['pg'];
+    }
+}
+// Delete
+function deleteCourse() {
+    if (current_user_isProfessor()) {
+        $pg = $GLOBALS['pg'];
+    }
+}
 ?>
-
-<?php include ('views/header.html'); ?>
-<body>
-<?php include ('views/nav.php'); ?>
-<div class="container">
-	<div class="row">
-		<?php //print_r($_SESSION); ?>
-		<h3>Welcome <?php echo current_user_role(); ?>!</h3>
-	</div>
-	<div class="row">
-		<?php
-			// $pg = $GLOBALS['pg'];
-			// $result = pg_query($pg, "SELECT courseid, coursename, section, semester_year, semester_term FROM db.course");
-			// while($row = pg_fetch_row($result)) {
-			// 	print_r($row);
-			// }
-			
-			if (current_user_isProfessor()) {
-				// professor
-				?>
-				<div class="col-lg-12">
-					
-				</div>
-			<?php } else { 
-				// student
-				$user_assignments = indexAssignments(current_user());
-				?>
-				<div class="col-lg-12">
-					<div class="media">
-				  <div class="media-body">
-				    <table class="table table-hover table-condensed">
-				      <thead>
-				        <tr>
-				          <th>All Assignments <strong>(<?php count($user_assignments); ?>)</strong></th>
-				          <th colspan="3"></th>
-				        </tr>
-				      </thead>
-				    
-				      <tbody>
-				          <tr>
-				              <td>Assignment ID</td>
-				              <td>Assignment name</td>
-				              <td>Assignment text</td>
-				              <td><a href="#">View assignment</a></td>
-				          </tr>
-				      </tbody>
-				    </table>
-				  </div>
-				</div>
-				</div>
-			<?php } ?>
-	</div>
-</div>
-
-</body>
-</html>

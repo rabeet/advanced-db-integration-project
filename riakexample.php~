@@ -37,7 +37,7 @@ $object->setContentType('text/plain');
 
 // store object
 $store  = StoreValue::builder($location, $object)
-    ->withPw(2)
+    ->withPw(1)
     ->withW(2)
     ->withDw(2)
     ->build();
@@ -52,8 +52,8 @@ $location  = new RiakLocation($namespace, 'icemand');
 
 // fetch object
 $fetch  = FetchValue::builder($location)
-    ->withNotFoundOk(false)
-    ->withPr(2)
+    ->withNotFoundOk(true)
+    ->withPr(1)
     ->withR(2)
     ->build();
 
@@ -71,7 +71,7 @@ $location  = new RiakLocation($namespace, 'icemand');
 
 // delete object
 $delete  = DeleteValue::builder($location)
-    ->withPw(2)
+    ->withPw(1)
     ->withW(2)
     ->withDw(2)
     ->build();

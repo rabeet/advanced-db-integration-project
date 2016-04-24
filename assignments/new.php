@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Assignment's Course ID:</label>
                         <div class="col-sm-10">
-                            <input type="name" class="form-control" name="courseid" placeholder="Enter Course ID">
+                            <input type="name" class="form-control" name="courseid" value="<?php echo $_GET["courseid"] ?>" placeholder="Enter Course ID">
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="semester_term">Assignment Description:</label>
                         <div class="col-sm-10">
-                            <input type="textarea" class="form-control" name="assignmenttext" placeholder="Enter Assignment Text">
+                            <textarea class="form-control" rows="7" name="assignmenttext" placeholder="Enter Assignment or description here"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
