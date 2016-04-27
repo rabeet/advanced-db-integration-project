@@ -10,4 +10,4 @@ The location of the PostgreSQL coordinator and locations of Riak nodes are confi
 
 I recommend security for any Riak cluster. I used a software VPN, which was cost-effective in the context of our project.
 
-Read more about the project here: 
+Read more about the project here: https://drive.google.com/open?id=0B3-jfSdy2_lZemNtUU41bGRXT1E
