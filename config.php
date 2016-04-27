@@ -1,7 +1,7 @@
 <?php
 
 //define("HTTP_SCRIPT_HOME", "http://core.data.wtf/project");
-define("HTTP_SCRIPT_HOME", "");
+define("HTTP_SCRIPT_HOME", "https://adv-db-proj.herokuapp.com");
 
 $ROLE["PROF"] = "Professor";
 $ROLE["STU"] = "Student";
