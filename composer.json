@@ -1,0 +1,8 @@
+{
+    "require": {
+        "monolog/monolog": "^1.18",
+        "php-riak/riak-client": "dev-master"
+    },
+	"minimum-stability":"dev",
+	"prefer-stable":true
+}
